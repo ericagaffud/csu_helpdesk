@@ -1,0 +1,12 @@
+{
+    "colleges": [
+        {
+            "id": 1,
+            "name": "College of Engineering and Architecture"
+        },
+        {
+            "id": 2,
+            "name": "College of Science and Information Communication"
+        }
+    ]
+}
