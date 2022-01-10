@@ -17,21 +17,23 @@
                         <b-form-radio :aria-describedby="ariaDescribedby" v-model.trim="$v.systemSub.$model" :class="{'is-invalid': validationStatus($v.systemSub)}" name="Zoom" value="Zoom"><span style="margin-left:10px"></span> Zoom </b-form-radio> <br>
                         <b-form-radio :aria-describedby="ariaDescribedby" v-model.trim="$v.systemSub.$model" :class="{'is-invalid': validationStatus($v.systemSub)}" name="Edmodo" value="Edmodo"><span style="margin-left:10px"></span> Edmodo </b-form-radio><br>
                         <b-form-radio :aria-describedby="ariaDescribedby" v-model.trim="$v.systemSub.$model" :class="{'is-invalid': validationStatus($v.systemSub)}" name="Discord" value="Discord"><span style="margin-left:10px"></span> Discord </b-form-radio><br>
-                        <div v-if="!$v.systemSub.required" class="invalid-feedback">Choose one</div>
                         <b-form-radio @change="enableInputOthers()" type="button" :aria-describedby="ariaDescribedby" v-model="systemSub" name="some-radios" value="Others" v-model.trim="$v.systemSub.$model" :class="{'is-invalid': validationStatus($v.systemSub)}"> <span style="margin-left:10px"></span> Others: </b-form-radio>
                         <b-input id="inputOthers" name="inputOthers" ref="inputOthers" type="text"></b-input>
+                        <div v-if="!$v.systemSub.required" class="invalid-feedback">Choose one</div>
                     </b-form-radio-group>
                 </div>
                 <b-row>
                     <b-col cols="4">
-                      <b-nav pills>
-                        <b-button variant="warning" type="submit" active> Next </b-button>
-                      </b-nav>
+                        <b-nav pills fill>
+                            <b-button variant="warning" @click="$router.go(-1)" active class="drivebutton"> Back </b-button>
+                            <b-nav-item disabled></b-nav-item>
+                            <b-button variant="warning" type="submit" active class="drivebutton"> Next </b-button>
+                        </b-nav>
                     </b-col>
                     <b-col cols="3">
                         <b-progress height="10px" variant="warning" :value="value" class="mb-3 mt-3"></b-progress>
                     </b-col>
-                    <b-col cols="2" class="mt-2"> <span class="page">Page 2 of 3</span> </b-col>
+                    <b-col cols="2" class="mt-2"> <span class="page">Page 2 of 4</span> </b-col>
                     <b-col cols="3">
                       <b-button variant="warning" @click="clearForm"> Clear Form </b-button>
                     </b-col>
@@ -55,11 +57,14 @@ export default {
     data: function () {
         return {
             systemSub: '',
-            value: 66.66
+            value: 50
         }
     },
     validations: {
         systemSub: { required }
+    },
+    mounted: function() {
+        this.systemSub = this.$store.state.systemSub
     },
     methods: {
         validationStatus: function(validation) {
@@ -67,7 +72,7 @@ export default {
         },
         onSelect(systemSub) {
             if(systemSub) {
-                /* this.$store.commit('connectivityStore', {connectivitySub: this.connectivitySub})  */
+                this.$store.commit('systemStore', {systemSub: this.systemSub})
                 setTimeout( () => this.$router.push({ path: '/subpage'}),1000)
             }
             console.log('No data')
@@ -82,7 +87,6 @@ export default {
         clearForm(){
             alert('Clear Form')
             this.$refs.myForm.reset()
-            window.location.reload()
         },
     }
 }
@@ -126,5 +130,9 @@ input {
 .page {
     font-size: small;
     color: rgba(255, 255, 0, 0.637);
+}
+
+.drivebutton {
+  width: 40%;
 }
 </style>

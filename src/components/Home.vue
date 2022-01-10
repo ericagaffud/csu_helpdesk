@@ -90,7 +90,7 @@
                     <b-col cols="3">
                         <b-progress height="10px" variant="warning" :value="value" class="mb-3 mt-3"></b-progress>
                     </b-col>
-                    <b-col cols="2" class="mt-2"> <span class="page">Page 1 of 3</span> </b-col>
+                    <b-col cols="2" class="mt-2"> <span class="page">Page 1 of 4</span> </b-col>
                     <b-col cols="3">
                       <b-button variant="warning" @click="clearForm"> Clear Form </b-button>
                     </b-col>
@@ -120,7 +120,7 @@ export default {
             coyear: '',
             phone: '',
             selectProblem: '',
-            value: 33.33,
+            value: 25,
             colleges: []
         }
     },
@@ -141,13 +141,28 @@ export default {
         .catch(function(err) {
             console.log(err)
         });
+
+        this.store()
     },
     methods: {
         validationStatus: function(validation) {
             return typeof validation != "undefined" ? validation.$error : false
         },
 
-        issue () {
+        issue() {
+            this.$v.$touch();
+            if (this.$v.$pendding || this.$v.$error) return
+
+            const temp = {
+                name: this.name,
+                email: this.email,
+                college: this.college,
+                coyear: this.coyear, 
+                phone: this.phone, 
+                selectProblem: this.selectProblem
+            }
+            this.$store.commit('homeStore', temp)
+
             this.onSelectRad()
         },
 
@@ -163,17 +178,18 @@ export default {
             }
         },
 
-        submit: function() {
-
-            this.$v.$touch();
-            if (this.$v.$pendding || this.$v.$error) return
-
-            alert('Data Submit');
-        },
         clearForm(){
             alert('Clear Form')
             this.$refs.myForm.reset()
             window.location.reload()
+        },
+        store() {
+            this.name =this.$store.state.name
+            this.email = this.$store.state.email
+            this.college = this.$store.state.college
+            this.coyear = this.$store.state.coyear
+            this.phone = this.$store.state.phone
+            this.selectProblem = this.$store.state.selectProblem
         },
     }
 }

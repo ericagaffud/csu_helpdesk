@@ -1,12 +1,124 @@
 {
-    "colleges": [
-        {
-            "id": 1,
-            "name": "College of Engineering and Architecture"
-        },
-        {
-            "id": 2,
-            "name": "College of Science and Information Communication"
-        }
-    ]
+  "colleges": [
+    {
+      "id": 1,
+      "name": "College of Engineering and Architecture"
+    },
+    {
+      "id": 2,
+      "name": "College of Science and Information Communication"
+    }
+  ],
+  "issues": [
+    {
+      "name": "rew",
+      "email": "afs",
+      "college": "College of Engineering and Architecture",
+      "coyear": "as",
+      "phone": "ads",
+      "selectProblem": "Application/System",
+      "case": "Teams",
+      "description": "Forget my password",
+      "id": 1
+    },
+    {
+      "name": "rew",
+      "email": "afs",
+      "college": "College of Engineering and Architecture",
+      "coyear": "as",
+      "phone": "ads",
+      "selectProblem": "Application/System",
+      "case": "Teams",
+      "description": "Forget my password",
+      "id": 2
+    },
+    {
+      "name": "rew",
+      "email": "afs",
+      "college": "College of Engineering and Architecture",
+      "coyear": "as",
+      "phone": "ads",
+      "selectProblem": "Application/System",
+      "case": "Teams",
+      "description": "Forget my password",
+      "id": 3
+    },
+    {
+      "name": "erwa",
+      "email": "asd",
+      "college": "College of Science and Information Communication",
+      "coyear": "ads",
+      "phone": "ads",
+      "selectProblem": "Application/System",
+      "case": "Google Meet",
+      "description": "asdasd",
+      "id": 4
+    },
+    {
+      "name": "erwa",
+      "email": "asd",
+      "college": "College of Science and Information Communication",
+      "coyear": "ads",
+      "phone": "ads",
+      "selectProblem": "Academic Problem",
+      "case": "Google Meet",
+      "description": "asdasd",
+      "id": 5
+    },
+    {
+      "name": "aesasd",
+      "email": "adsads",
+      "college": "College of Engineering and Architecture",
+      "coyear": "asd",
+      "phone": "124",
+      "selectProblem": "COVID Response",
+      "case": "Teacher with symptoms",
+      "description": "sadsasd",
+      "id": 6
+    },
+    {
+      "name": "aesasd",
+      "email": "adsads",
+      "college": "College of Engineering and Architecture",
+      "coyear": "asd",
+      "phone": "124",
+      "selectProblem": "COVID Response",
+      "case": "Teacher with symptoms",
+      "description": "sadsasd",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "college": "",
+      "coyear": "",
+      "phone": "",
+      "selectProblem": "",
+      "case": "",
+      "description": "asdasd",
+      "id": 8
+    },
+    {
+      "name": "erica",
+      "email": "adsa",
+      "college": "College of Engineering and Architecture",
+      "coyear": "as",
+      "phone": "124",
+      "selectProblem": "Application/System",
+      "case": "Zoom",
+      "description": "Forget my password",
+      "id": 9
+    },
+    {
+      "name": "erica",
+      "email": "adsa",
+      "college": "College of Engineering and Architecture",
+      "coyear": "as",
+      "phone": "124",
+      "selectProblem": "Application/System",
+      "case": "Zoom",
+      "description": "aadkads.ads",
+      "id": 10
+    }
+  ]
 }

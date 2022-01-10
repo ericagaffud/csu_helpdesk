@@ -4,6 +4,8 @@ import Home from '../components/Home.vue'
 import prob_system from '../components/prob_system.vue'
 import prob_academic from '../components/prob_academic.vue'
 import prob_response from '../components/prob_response.vue'
+import subpage from '../components/subpage.vue'
+import ConfirmationPage from '../components/ConfirmationPage.vue'
 
 Vue.use(Router)
 
@@ -27,6 +29,16 @@ const routes = [
         path: '/problem_response',
         name: 'prob_response',
         component: prob_response
+    },
+    {
+        path: '/subpage',
+        name: 'subpage',
+        component: subpage
+    },
+    {
+        path: '/confirmation',
+        name: 'ConfirmationPage',
+        component: ConfirmationPage
     }
 ]
 

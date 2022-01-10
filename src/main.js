@@ -4,6 +4,7 @@ import router from './router/router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Vuelidate from 'vuelidate'
 import axios from 'axios'
+import store from './store/store'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
@@ -17,5 +18,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 new Vue ({
   el: '#app',
   router,
+  store,
   render: h => h(App),
 })

@@ -20,21 +20,23 @@
                         <b-form-radio :aria-describedby="ariaDescribedby" v-model.trim="$v.responseSub.$model" :class="{'is-invalid': validationStatus($v.responseSub)}" value="Teacher with symptoms"><span style="margin-left:10px"></span> Improper use of face mask </b-form-radio><br>
                         <b-form-radio :aria-describedby="ariaDescribedby" v-model.trim="$v.responseSub.$model" :class="{'is-invalid': validationStatus($v.responseSub)}" value="Student with symptoms"><span style="margin-left:10px"></span> Not using face shiled </b-form-radio><br>
                         <p class="category"> <strong> Others </strong></p>
-                        <div v-if="!$v.responseSub.required" class="invalid-feedback">Choose one</div>
                         <b-form-radio @change="enableInputOthers()" type="button" :aria-describedby="ariaDescribedby" v-model="responseSub" name="some-radios" value="Others" v-model.trim="$v.responseSub.$model" :class="{'is-invalid': validationStatus($v.responseSub)}"> <span style="margin-left:10px"></span> Please specify: </b-form-radio>
                         <b-input id="inputOthers" name="inputOthers" ref="inputOthers" type="text"></b-input>
+                        <div v-if="!$v.responseSub.required" class="invalid-feedback">Choose one</div>
                     </b-form-radio-group>
                 </div><br>
                 <b-row>
                     <b-col cols="4">
-                      <b-nav pills>
-                        <b-button variant="warning" type="submit" active> Next </b-button>
-                      </b-nav>
+                        <b-nav pills fill>
+                            <b-button variant="warning" @click="$router.go(-1)" active class="drivebutton"> Back </b-button>
+                            <b-nav-item disabled></b-nav-item>
+                            <b-button variant="warning" type="submit" active class="drivebutton"> Next </b-button>
+                        </b-nav>
                     </b-col>
                     <b-col cols="3">
                         <b-progress height="10px" variant="warning" :value="value" class="mb-3 mt-3"></b-progress>
                     </b-col>
-                    <b-col cols="2" class="mt-2"> <span class="page">Page 2 of 3</span> </b-col>
+                    <b-col cols="2" class="mt-2"> <span class="page">Page 2 of 4</span> </b-col>
                     <b-col cols="3">
                       <b-button variant="warning" @click="clearForm"> Clear Form </b-button>
                     </b-col>
@@ -58,11 +60,14 @@ export default {
     data: function () {
         return {
             responseSub: '',
-            value: 66.66
+            value: 50
         }
     },
     validations: {
         responseSub: { required }
+    },
+    mounted: function() {
+        this.responseSub = this.$store.state.responseSub
     },
     methods: {
         validationStatus: function(validation) {
@@ -70,7 +75,7 @@ export default {
         },
         onSelect(responseSub) {
             if(responseSub) {
-                /* this.$store.commit('connectivityStore', {connectivitySub: this.connectivitySub})  */
+                this.$store.commit('responseStore', {responseSub: this.responseSub}) 
                 setTimeout( () => this.$router.push({ path: '/subpage'}),1000)
             }
             console.log('No data')
@@ -85,7 +90,6 @@ export default {
         clearForm(){
             alert('Clear Form')
             this.$refs.myForm.reset()
-            window.location.reload()
         },
     }
 }
@@ -133,5 +137,9 @@ input {
 .page {
     font-size: small;
     color: rgba(255, 255, 0, 0.637);
+}
+
+.drivebutton {
+  width: 40%;
 }
 </style>
