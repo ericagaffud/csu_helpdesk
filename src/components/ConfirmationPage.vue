@@ -7,8 +7,7 @@
                 <Header />
             </div>
             <div class="enclose sidebg">
-                <h4>Your response has been submitted.</h4>
-                <p>These are your submitted data.</p><br>
+                <h4>These are your data.</h4><br>
                 <b-row>
                     <b-col>
                         <h6> Name: </h6>
@@ -62,6 +61,7 @@
 
 <script>
 import Header from './Header.vue'
+import { myIssue } from './MyMethods'
 
 export default {
     name: 'ConfirmationPage',
@@ -74,7 +74,23 @@ export default {
         },
         datapage() {
             setTimeout( () => this.$router.push({ path: '/datapage'}),1000)
-        }
+            this.submitIssue()
+        },
+
+        async submitIssue() {
+            const newIssue = {
+                name: this.$store.state.name,
+                email: this.$store.state.email,
+                college: this.$store.state.college,
+                coyear: this.$store.state.coyear,
+                phone: this.$store.state.phone,
+                selectProblem: this.$store.state.selectProblem,
+                case: this.$store.state.systemSub || this.$store.state.academicSub || this.$store.state.responseSub,
+                description: this.$store.state.description,
+            }
+            const issue = await myIssue(newIssue)
+            console.log(issue) 
+        },
     }
 }
 </script>

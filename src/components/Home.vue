@@ -27,7 +27,7 @@
                         <p class="plabel">Enter valid email</p>
                         <b-form-input name="email" id="email" v-model.trim="$v.email.$model" :class="{'is-invalid': validationStatus($v.email)}"></b-form-input>
                         <div v-if="!$v.email.required" class="invalid-feedback">This field is required.</div>
-                        <!-- <div v-if="!$v.email.email" class="invalid-feedback"> Email requires @gmail.com extension </div> -->
+                        <div v-if="!$v.email.email" class="invalid-feedback"> Email requires @gmail.com extension </div>
                     </b-form-group>
                 </div>
                 <div class="enclose sidebg">
@@ -67,7 +67,7 @@
                     >
                         <label for="phone"> <h6> Phone Number <span style="color:red">*</span></h6> </label><br>
                         <p class="plabel">Enter valid number</p>
-                        <b-form-input name="phone" id="phone" v-model.trim="$v.phone.$model" :class="{'is-invalid': validationStatus($v.phone)}"></b-form-input>
+                        <b-form-input name="phone" id="phone" maxlength="11" @keypress="acceptNumber($event)" placeholder="09" v-model.trim="$v.phone.$model" :class="{'is-invalid': validationStatus($v.phone)}"></b-form-input>
                         <div v-if="!$v.phone.required" class="invalid-feedback">This field is required.</div>
                     </b-form-group>
                 </div>
@@ -105,7 +105,7 @@
 
 <script>
 import Header from './Header.vue'
-import { required } from 'vuelidate/lib/validators'
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
     name: 'Home',
@@ -126,7 +126,7 @@ export default {
     },
     validations: {
         name: { required },
-        email: { required },
+        email: { required, email },
         college: { required },
         coyear: { required },
         phone: { required },
@@ -175,6 +175,16 @@ export default {
             }
             else if (this.selectProblem == 'COVID Response'){
                 setTimeout( () => this.$router.push({ path: '/problem_response'}), 1000)
+            }
+        },
+
+        acceptNumber: function(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+            evt.preventDefault();
+            } else {
+            return true;
             }
         },
 

@@ -6,119 +6,77 @@
     },
     {
       "id": 2,
-      "name": "College of Science and Information Communication"
+      "name": "College of Medicine"
+    },
+    {
+      "id": 3,
+      "name": "College of Human Kinetics"
+    },
+    {
+      "id": 4,
+      "name": "College of Information and Computing Science"
+    },
+    {
+      "id": 5,
+      "name": "College of Industrial Technology"
+    },
+    {
+      "id": 6,
+      "name": "College of Public Administration"
+    },
+    {
+      "id": 7,
+      "name": "College of Veterinary Medicine"
+    },
+    {
+      "id": 8,
+      "name": "College of Arts and Sciences"
     }
   ],
   "issues": [
     {
-      "name": "rew",
-      "email": "afs",
+      "name": "Erica D. Gaffud",
+      "email": "ericadurangaffud@gmail.com",
       "college": "College of Engineering and Architecture",
-      "coyear": "as",
-      "phone": "ads",
-      "selectProblem": "Application/System",
-      "case": "Teams",
-      "description": "Forget my password",
+      "coyear": "BSCpE 4A",
+      "phone": "09553805164",
+      "selectProblem": "Academic Problem",
+      "case": "Schedule",
+      "description": "My schedule doesn't match with the prof's schedule",
       "id": 1
     },
     {
-      "name": "rew",
-      "email": "afs",
-      "college": "College of Engineering and Architecture",
-      "coyear": "as",
-      "phone": "ads",
+      "name": "Irene R. Maruquin",
+      "email": "rhinrhinmaruquin@gmail.com",
+      "college": "College of Arts and Sciences",
+      "coyear": "BS in Psychology",
+      "phone": "09975234108",
       "selectProblem": "Application/System",
-      "case": "Teams",
-      "description": "Forget my password",
+      "case": "CSU Portal",
+      "description": "I forgot my password.",
       "id": 2
     },
     {
-      "name": "rew",
-      "email": "afs",
-      "college": "College of Engineering and Architecture",
-      "coyear": "as",
-      "phone": "ads",
-      "selectProblem": "Application/System",
-      "case": "Teams",
-      "description": "Forget my password",
+      "name": "Joana Mae C. Pagulayan",
+      "email": "joanamaepagulayan@gmail.com",
+      "college": "College of Information and Computing Science",
+      "coyear": "BSIT 4A",
+      "phone": "09554138162",
+      "selectProblem": "COVID Response",
+      "case": "Improper use of face mask",
+      "description": "I saw a group of students in COEA and some are not wearing their face mask",
       "id": 3
     },
     {
-      "name": "erwa",
-      "email": "asd",
-      "college": "College of Science and Information Communication",
-      "coyear": "ads",
-      "phone": "ads",
+      "name": "Joanna M. Marayag",
+      "email": "joannamarayag@gmail.com",
+      "college": "College of Human Kinetics",
+      "coyear": "BPED 4A",
+      "phone": "09065411289",
       "selectProblem": "Application/System",
-      "case": "Google Meet",
-      "description": "asdasd",
+      "case": "Teams",
+      "description": "I forgot the username the school has given me.",
       "id": 4
-    },
-    {
-      "name": "erwa",
-      "email": "asd",
-      "college": "College of Science and Information Communication",
-      "coyear": "ads",
-      "phone": "ads",
-      "selectProblem": "Academic Problem",
-      "case": "Google Meet",
-      "description": "asdasd",
-      "id": 5
-    },
-    {
-      "name": "aesasd",
-      "email": "adsads",
-      "college": "College of Engineering and Architecture",
-      "coyear": "asd",
-      "phone": "124",
-      "selectProblem": "COVID Response",
-      "case": "Teacher with symptoms",
-      "description": "sadsasd",
-      "id": 6
-    },
-    {
-      "name": "aesasd",
-      "email": "adsads",
-      "college": "College of Engineering and Architecture",
-      "coyear": "asd",
-      "phone": "124",
-      "selectProblem": "COVID Response",
-      "case": "Teacher with symptoms",
-      "description": "sadsasd",
-      "id": 7
-    },
-    {
-      "name": "",
-      "email": "",
-      "college": "",
-      "coyear": "",
-      "phone": "",
-      "selectProblem": "",
-      "case": "",
-      "description": "asdasd",
-      "id": 8
-    },
-    {
-      "name": "erica",
-      "email": "adsa",
-      "college": "College of Engineering and Architecture",
-      "coyear": "as",
-      "phone": "124",
-      "selectProblem": "Application/System",
-      "case": "Zoom",
-      "description": "Forget my password",
-      "id": 9
-    },
-    {
-      "name": "erica",
-      "email": "adsa",
-      "college": "College of Engineering and Architecture",
-      "coyear": "as",
-      "phone": "124",
-      "selectProblem": "Application/System",
-      "case": "Zoom",
-      "description": "aadkads.ads",
-      "id": 10
     }
   ]
 }
